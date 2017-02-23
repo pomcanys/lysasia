@@ -1,0 +1,171 @@
+/* ==========================================================================
+   @base.scss
+   Base Styles | Typography, Buttons, Classes
+============================================================================= */
+
+
+// HTML,BODY
+// --------------------------------------------------
+html {
+  font-size: 16px;
+}
+
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+  font-weight: 300;
+}
+
+
+// Fonts
+// --------------------------------------------------
+@font-face {
+  font-family: 'CaeciliaLight';
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/caecilia/CaeciliaLTStd-Light.eot?#iefix") format("embedded-opentype"), 
+  url("../fonts/caecilia/CaeciliaLTStd-Light.woff") format("woff"), 
+  url("../fonts/caecilia/CaeciliaLTStd-Light.ttf") format("truetype"), 
+  url("../fonts/caecilia/CaeciliaLTStd-Light.svg") format("svg");
+}
+
+@font-face {
+  font-family: 'Akzidenz-Grotesk Pro';
+  src: url('../fonts/akzidenz/AkzidenzGroteskPro-Light.eot');
+  src: url('../fonts/akzidenz/AkzidenzGroteskPro-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/akzidenz/AkzidenzGroteskPro-Light.woff2') format('woff2'),
+    url('../fonts/akzidenz/AkzidenzGroteskPro-Light.woff') format('woff'),
+    url('../fonts/akzidenz/AkzidenzGroteskPro-Light.ttf') format('truetype'),
+    url('../fonts/akzidenz/AkzidenzGroteskPro-Light.svg#AkzidenzGroteskPro-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Akzidenz-Grotesk Pro';
+  src: url('../fonts/akzidenz/AkzidenzGroteskPro-Bold.eot');
+  src: url('../fonts/akzidenz/AkzidenzGroteskPro-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/akzidenz/AkzidenzGroteskPro-Bold.woff2') format('woff2'),
+    url('../fonts/akzidenz/AkzidenzGroteskPro-Bold.woff') format('woff'),
+    url('../fonts/akzidenz/AkzidenzGroteskPro-Bold.ttf') format('truetype'),
+    url('../fonts/akzidenz/AkzidenzGroteskPro-Bold.svg#AkzidenzGroteskPro-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Akzidenz-Grotesk Pro Bold Ext';
+  src: url('../fonts/akzidenz/AkzidenzGroteskPro-BoldEx.eot');
+  src: url('../fonts/akzidenz/AkzidenzGroteskPro-BoldEx.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/akzidenz/AkzidenzGroteskPro-BoldEx.woff2') format('woff2'),
+    url('../fonts/akzidenz/AkzidenzGroteskPro-BoldEx.woff') format('woff'),
+    url('../fonts/akzidenz/AkzidenzGroteskPro-BoldEx.ttf') format('truetype'),
+    url('../fonts/akzidenz/AkzidenzGroteskPro-BoldEx.svg#AkzidenzGroteskPro-BoldEx') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+// Color Classes
+// ----------------------------------------------
+.pink {
+  background-color: $pink;
+}
+
+.green {
+  background-color: $green;
+
+  a:hover {
+    color: $grayDarker;
+  }
+}
+
+.brown {
+  background-color: $brown;
+}
+
+.dark-brown {
+  background-color: $dark-brown;
+
+  a:hover {
+    background-color: $dark-brownDark;
+  }
+}
+
+.grey {
+  background-color: $grey;
+}
+
+.lightgrey {
+  background-color: $lightgrey;
+}
+
+.text-black,
+.text-black a {
+  color: $black;
+}
+
+.text-black a {
+  text-decoration: underline;
+}
+
+
+
+// Styles
+// --------------------------------------------------
+h1 {
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0 0 30px 0;
+}
+
+.main h1,
+.main-full h1 {
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-family: $font-family-base;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h4 {
+  margin: 15px 0 3px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+p {
+  margin-bottom: 18px;
+}
+
+span.akzidenz {
+  font-family: $font-family-base;
+  font-weight: 700;
+}
+
+
+
+// Classes
+// --------------------------------------------------
+.margin-top {
+	margin-top: $abstandSmall;
+}
+
+.margin-bottom {
+	margin-bottom: $abstandSmall;
+}
+
+.padding-top {
+  padding-top: $abstandSmall;
+}
+
+.padding-bottom {
+  padding-bottom: $abstandSmall;
+}
+
+
+

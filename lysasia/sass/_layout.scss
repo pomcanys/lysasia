@@ -1,0 +1,102 @@
+/* ==========================================================================
+   @layout.scss
+   Layout Styles | Footer
+============================================================================= */
+
+@media only screen and (min-width: 2000px) {
+  .container {
+      width: 1270px;
+  }
+}
+
+
+// Footer
+// --------------------------------------------------
+.footer {
+  background-color: $bgFooter;
+  position: relative;
+  padding: 15px;
+  font-size: $font-size-small;
+  
+    .footer-menu {
+      list-style: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+          
+      & > li {
+        margin-left: -40px;
+      }
+
+      @media only screen and (min-width: 992px) {
+        & > li {
+          margin-left: -50px;
+        }
+      }
+    }
+
+    // Schriftgrösse anpassen für Laptop-Ansicht
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .footer-menu {
+        font-size: 13px;
+      }
+    }
+}
+
+.icons {
+  width: 40px;
+  height: 40px;
+  margin: 0 15px 15px 0;
+  float: left;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .icons {
+    clear: left;
+  }
+}
+
+// Icons from directory "icons"
+%icon {
+  background-repeat: no-repeat
+}
+
+.icon-facebook,
+.icon-facebook\:regular {
+  @extend %icon;
+  background-image: url('../img/icons/icons.svg');
+  background-position: 0 0;
+}
+
+.icon-facebook-dims {
+  width: 40px;
+  height: 40px;
+}
+
+.icon-menu,
+.icon-menu\:regular {
+  @extend %icon;
+  background-image: url('../img/icons/icons.svg');
+  background-position: right -40px;
+}
+
+.icon-menu-dims {
+  width: 40px;
+  height: 40px;
+}
+
+.icon-tripadvisor,
+.icon-tripadvisor\:regular {
+  @extend %icon;
+  background-image: url('../img/icons/icons.svg');
+  background-position: 0 -72px;
+}
+
+.icon-tripadvisor-dims {
+  width: 40px;
+  height: 40px;
+}
+

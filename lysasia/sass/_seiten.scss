@@ -1,0 +1,388 @@
+/* ==========================================================================
+   @seiten.scss
+   Seitenlayout mit Teasern
+============================================================================= */
+
+
+// Quick-Navigation Startseite (Reservation / Delivery)
+// -------------------------------------------------------
+.quick-navi, .teaser, .teaser-2-height, .burger {
+  color: $white;
+  margin-bottom: 10px;
+  
+    h2, h3 {
+      margin: 0;
+    }
+}
+
+
+.quick-navi {
+  height: 90px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 15px;
+  transition: .4s ease-in-out;
+
+  h2 {
+    font-size: 19px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  &.pink:hover {
+    background-color: $pinkDark;
+  }
+
+  &.green:hover {
+    background-color: $greenDark;
+  }
+
+  &.brown:hover {
+    background-color: $brownDark;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .quick-navi h2 {
+    font-size: 24px;
+  }
+
+  .quick-navi h3 {
+    font-size: $font-size-h3;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .quick-navi h2 {
+    font-size: $font-size-h2;
+  }
+
+  .quick-navi {
+    height: 140px;
+  }
+}
+
+// Teaser-Boxen mit Bild
+// -------------------------------------------------------
+.teaser {
+  height: 160px;
+  text-align: center;
+  text-transform: uppercase;
+    
+  .teaser-img {
+    height: 120px;
+    overflow: hidden;
+    background: $black;
+    
+      img {
+        margin-top: -80px;
+        min-width: 100%;
+        height: auto;
+        // -webkit-transform: scale(1);
+        // transform: scale(1);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+      }
+      @media only screen and (min-width: 992px) {
+        img {
+          margin-top: -10px;
+        }
+      }
+      @media only screen and (min-width: 1200px) {
+        img {
+          margin-top: -35px;
+        }
+      }
+
+    &:hover img {
+      // -webkit-transform: scale(1.05);
+      // transform: scale(1.05);
+      opacity: .5;
+    }
+  }
+
+  .color-bottom {
+    width: 100%;
+    padding: 10px 10px 8px 10px;
+  }
+
+  &.grey.hover:hover,
+  &:hover > .gray.hover {
+    background-color: $greyDark;
+    transition: .3s ease-in-out;
+  }
+
+  &.green.hover:hover,
+  &:hover > .green.hover  {
+    background-color: $greenDark;
+    transition: .3s ease-in-out;
+  }
+
+  &.pink.hover:hover,
+  &:hover > .pink.hover {
+    background-color: $pinkDark;
+    transition: .3s ease-in-out;
+  }
+
+  &.brown.hover:hover,
+  &:hover > .brown.hover {
+    background-color: $brownDark;
+    transition: .3s ease-in-out;
+  }
+
+  &.dark-brown.hover:hover,
+  &:hover > .dark-brown.hover {
+    background-color: $dark-brownDark;
+    transition: .3s ease-in-out;
+  }
+
+  &.text-left {
+    text-align: left;
+    padding: 20px 15px 15px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .teaser.oeffnung {
+    height: auto;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .teaser .color-bottom {
+    padding: 17px 10px 14px 10px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .teaser .color-bottom {
+    padding: 16px 10px 12px 10px;
+  }
+}
+
+
+// Teaser-breit mit weissem Text (BAO  / DIM SUM Dinner)
+// -------------------------------------------------------
+.image-img {
+  height: 140px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  background: $black;
+
+    img {
+      min-width: 100%;
+      height: auto;
+      transition: .3s ease-in-out;
+    }
+
+  &:hover img {
+    opacity: .5;
+  }
+}
+
+.image {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  text-align: center;
+  text-transform: uppercase;
+  height: 140px;
+
+  h2 {
+    font-family: 'Akzidenz-Grotesk Pro Bold Ext', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    h2 {
+      font-size:23px;
+    }
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .image-img, .image, .teaser {
+    height: 205px;
+  }
+
+  .teaser .teaser-img {
+    height: 155px;
+  }
+
+  .image h2 {
+    font-size: $font-size-h2;
+  }
+
+  .image h3 {
+    font-size: $font-size-h3;
+  }
+}
+
+.center-height {
+  display: table;
+  width: 100%;
+  
+  .inner {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+// Angepasste Höhe bei Tablet-Ansicht
+@media only screen and (max-width: 991px) {
+  .smaller-height {
+    height: 100px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .larger-height {
+    height: 200px;
+
+    .teaser-img {
+      height: 160px;
+    }
+  }
+}
+
+// Schriftgrösse H3 bei 992px-Ansicht
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .teaser h3 {
+    font-size: 17px;
+  }
+}
+
+
+// Öffnungszeiten
+// ------------------------------------------------
+.oeffnung, .teaser-2-height {
+  text-transform: none;
+
+  h3 {
+    margin-bottom: 15px;
+  }
+}
+
+.teaser-2-height {
+  padding: 20px 15px 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .teaser-2-height {
+    height: 500px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .teaser-2-height {
+    height: 420px;
+   }
+
+  .oeffnung, .teaser-2-height {
+    p, h4 {
+      font-size: $font-size-small;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .oeffnung, .teaser-2-height {
+    p, h4 {
+      font-size: $font-size-base;
+    }
+  }
+}
+
+// Spalte Wochentag bei Öffnungszeiten
+span.tag {
+  display: inline-block;
+  width: 80px;
+}
+
+@media only screen and (min-width: 992px) {
+  span.tag {
+    width: 70px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  span.tag {
+    width: 80px;
+  }
+}
+
+
+// Swiper Galerie
+// -------------------------------------------------
+.swiper-container {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 10px;
+}  
+
+@media only screen and (min-width: 768px) {
+  .swiper-container {
+    height: 435px;
+  }
+}  
+
+@media only screen and (min-width: 992px) {
+  .swiper-container {
+    height: 635px;
+  }
+} 
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}  
+
+
+// Unterseiten
+// -------------------------------------------------
+.main-row {
+  margin: 0;
+  padding: 30px;
+  margin-bottom: 10px;
+
+  .swiper-container {
+    margin-bottom: 0;
+  }
+
+  @media only screen and (min-width: 992px) {
+    &.lightgrey {
+      min-height: 636px !important;
+    }
+
+    // Breite .main und .galerie anpassen
+    .main {
+      width: 43%;
+      margin-right: 2%;
+    }
+
+    .main-full {
+      width: 100%;
+    }
+
+    .galerie {
+      width: 55%;
+    }
+
+    // Galerie-Höhe
+    .swiper-container {
+      height: 575px;
+    }
+  }
+}
+
+
+
+
+
+
+
