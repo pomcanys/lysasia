@@ -50,13 +50,26 @@
 		<!-- Custom styles for this template -->
 		<link href="<?php bloginfo( 'template_url' ); ?>/css/styles.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-        <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/jquery.formstyler.css">
-        <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/woocommerce.css">
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<style>
+		div.row.main-row.lightgrey {
+			min-height: 630px;
+		}
+		.main h1, 
+		.main-row h1 {
+			margin: 0px !important;
+		}
+		.main h3,
+		.main-row h3 {
+			margin-top: 0px !important;
+			margin-bottom: 22px !important;
+		}
+		</style>
+
 
 		<!-- WP-Head
 		================================================== -->
@@ -64,9 +77,9 @@
 
 	</head>
 	<?php if (is_front_page()) { ?>
-	<body <?php body_class('front'); ?> >
+	<body class="front">
 	<?php } else { ?>
-	<body <?php body_class('page'); ?> >
+	<body class="page">
 	<?php } ?>
 
 	<body class="front">
@@ -84,17 +97,6 @@
 									</div>
 									<h1 class="sr-only">LY’s Asia</h1>
 								</div>
-
-								<!-- Cart -->
-                <div class="warenkorb">
-                  <span class="cart">
-                    <img src="img/cart.svg" alt="Warenkorb" width="24" height="18" />0 
-                  </span>
-                  <span class="login">
-                    <a href="#">Login</a>
-                  </span>
-                </div>
-
 								<div class="col-xs-6 col-md-10 col-lg-9">
 									<div class="menu-btn icon-menu" role="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 										<span class="menu-text">MENU</span>
@@ -123,5 +125,4 @@
 							</div><!--/.container -->
 						</nav>
 					</header><!-- /.header -->
-
 		

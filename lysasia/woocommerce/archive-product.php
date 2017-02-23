@@ -3,35 +3,7 @@
           <!-- Content
           ================================================== -->
           <div class="row teaser-row row-eq-height woo-twobars-container" >
-			<div class="col-md-3 woo-left-side">
-                <!-- DELIVERY POPUP -->
-
-                <div class="delivery-popup">
-                    <h3 class="delivery-title">delivery</h3>
-                    <select name="zip-code" id="zip-code">
-                        <option selected="true" disabled="disabled" value="PLZ auswählen">PLZ auswählen</option>
-                        <option value="8001">8001</option>
-                        <option value="8002">8002</option>
-                        <option value="8005">8005</option>
-                        <option value="8004">8004</option>
-                        <option value="8006">8006</option>
-                        <option value="8008">8008</option>
-                        <option value="8032">8032</option>
-                        <option value="8037">8037</option>
-                        <option value="8038">8038</option>
-                        <option value="8044">8044</option>
-                        <option value="8045">8045</option>
-                        <option value="8037">8037</option>
-                        <option value="8064">8064</option>
-                    </select>
-                    <h3 class="delivery-title">take out</h3>
-                    <ul id="shops">
-                        <li>> Maag-Areal</li>
-                        <li>> Bahnhof Stadelhofen</li>
-                    </ul>
-                </div>
-                <!-- END DELIVERY POPUP -->
-
+			<div class="col-md-3 woo-left-side"> 
 				<div class="woo-left-inner">
 					<?php dynamic_sidebar( 'shop-left-cats' ); ?>
 				</div>
@@ -92,18 +64,17 @@
 	?>
 				
 				
-				<div class="reset-button" style="display: none;">
-                    <span>
-                        <a href="/">Zurücksetzen</a>
-                    </span>
-                </div>
+				
+				
+				
+				
 				
 				 </div>
 				
  
              </div >
 			        
-			<div class="col-md-3 woo-right-side">
+			<div class="col-md-3 woo-right-side"> 
 				<div class="woo-right-inner">
 					<?php dynamic_sidebar( 'shop-right-cart' ); ?>
 				</div>

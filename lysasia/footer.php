@@ -59,7 +59,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
     <!-- Custom JS -->
     <script src="<?php bloginfo( 'template_url' ); ?>/js/styles.js"></script>
-    <script src="<?php bloginfo( 'template_url' ); ?>/js/jquery.formstyler.js"></script>
     <script src="https://localina.com/code/localina.js" type="text/javascript" charset="utf-8"></script><script type="text/javascript">jQuery(document).ready(function() { var $ = jQuery; Localina.init({apiKey: '81002020111222f2c9ccecd2b72b1ff37de7d4fd70c534', locale: 'de'}); });</script>
 		<!-- Google Analytics (only not logged-in users) -->
 		<?php if ( is_user_logged_in() ) {

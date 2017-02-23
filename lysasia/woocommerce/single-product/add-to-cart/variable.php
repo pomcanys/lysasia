@@ -15,20 +15,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! function_exists( 'print_attribute_radio' ) ) {
-    function print_attribute_radio( $checked_value, $value, $label, $name, $product_id = null ) {
-        // This handles < 2.4.0 bw compatibility where text attributes were not sanitized.
-        $checked = sanitize_title( $checked_value ) === $checked_value ? checked( $checked_value, sanitize_title( $value ), false ) : checked( $checked_value, $value, false );
+	function print_attribute_radio( $checked_value, $value, $label, $name ) {
+		// This handles < 2.4.0 bw compatibility where text attributes were not sanitized.
+		$checked = sanitize_title( $checked_value ) === $checked_value ? checked( $checked_value, sanitize_title( $value ), false ) : checked( $checked_value, $value, false );
 
-        $input_name = 'attribute_' . esc_attr( $name ) ;
-        $esc_value = esc_attr( $value );
-        if ($product_id) {
-            $id = esc_attr( $name . '_v_' . $value . '_' .$product_id);
-        } else {
-            $id = esc_attr( $name . '_v_' . $value );
-        }
-        $filtered_label = apply_filters( 'woocommerce_variation_option_name', $label );
-        printf( '<div><input type="radio" name="%1$s" value="%2$s" id="%3$s" %4$s><label for="%3$s">%5$s</label></div>', $input_name, $esc_value, $id, $checked, $filtered_label );
-    }
+		$input_name = 'attribute_' . esc_attr( $name ) ;
+		$esc_value = esc_attr( $value );
+		$id = esc_attr( $name . '_v_' . $value );
+		$filtered_label = apply_filters( 'woocommerce_variation_option_name', $label );
+		printf( '<div><input type="radio" name="%1$s" value="%2$s" id="%3$s" %4$s><label for="%3$s">%5$s</label></div>', $input_name, $esc_value, $id, $checked, $filtered_label );
+	}
 }
 
 global $product;
@@ -44,7 +40,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 		<p class="stock out-of-stock"><?php _e( 'This product is currently out of stock and unavailable.', 'woocommerce' ); ?></p>
 	<?php else : ?>
 		<div class="variations">
-
+		
 			<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 			<div class="single_variation_wrap">
 				<?php do_action( 'woocommerce_before_single_variation' ); ?>
@@ -71,8 +67,8 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 				<?php do_action( 'woocommerce_after_single_variation' ); ?>
 			</div>
 			<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
-
-
+			
+			
 				<?php foreach ( $attributes as $name => $options ) : ?>
 					<!--<span><label for="<?php echo sanitize_title( $name ); ?>"><?php echo wc_attribute_label( $name ); ?></label></span>-->
 						<?php
@@ -96,11 +92,11 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 										if ( ! in_array( $term->slug, $options ) ) {
 											continue;
 										}
-										print_attribute_radio( $checked_value, $term->slug, $term->name, $sanitized_name, absint( $product->id ) );
+										print_attribute_radio( $checked_value, $term->slug, $term->name, $sanitized_name );
 									}
 								} else {
 									foreach ( $options as $option ) {
-										print_attribute_radio( $checked_value, $option, $option, $sanitized_name, absint( $product->id ) );
+										print_attribute_radio( $checked_value, $option, $option, $sanitized_name );
 									}
 								}
 							}
@@ -109,7 +105,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 							?>
 						</div>
 				<?php endforeach; ?>
-
+			
 		</div>
 
 	<?php endif; ?>

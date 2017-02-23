@@ -54,17 +54,17 @@ if ( ! defined( 'ABSPATH' ) ) {
             ), $cart_item_key );
             ?>
 						<?php if ( ! $_product->is_visible() ) : ?>
-							<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) .$cart_item['quantity'] . '&nbsp; &nbsp; &nbsp;' . $product_name . '&nbsp;'; ?>
+							<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name . '&nbsp;'; ?>
 						<?php else : ?>
 							<span>
-								<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $cart_item['quantity'] . '&nbsp; &nbsp; &nbsp;' . $product_name . '&nbsp;'; ?>
+								<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ) . $product_name . '&nbsp;'; ?>
 							</span>
 						<?php endif; ?>
 						<?php echo WC()->cart->get_item_data( $cart_item ); ?>
 
 						<?php
-
-						echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s %s', '', $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
+						
+						echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
 					</li>
 					<?php
         }
@@ -81,53 +81,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php if ( ! WC()->cart->is_empty() ) : ?>
 
-    <?php
-        $deliveryCost = 7;
-    ?>
-
-    <div class="additional">
-        <span>Depot Pinto</span>
-        <span>
-            <?php
-                $quantities = WC()->cart->get_cart_item_quantities();
-                $pintosQty = array_sum($quantities) * 10;
-                echo $pintosQty;
-            ?> CHF
-        </span>
-    </div>
-
-    <?php
-        if ($_COOKIE['zipCode']) { ?>
-            <div class="additional delivery-field">
-                <span>Versandkosten</span>
-                <span><?php echo $deliveryCost; ?> CHF</span>
-            </div>
-        <?php }
-    ?>
-
-
-	<p class="total"><strong><?php _e( 'Zwischentotal', 'woocommerce' ); ?>:</strong>
-        <?php
-            $prodTotal = WC()->cart->get_cart_total();
-
-            if ($_COOKIE['zipCode']) {
-                $genTotal = money_format('%i',  $prodTotal + $pintosQty + $deliveryCost);
-            } else {
-                $genTotal = money_format('%i',  $prodTotal + $pintosQty);
-            }
-        ?>
-        <span class="woocommerce-Price-amount amount"><?php echo $genTotal; ?>&nbsp;
-            <span class="woocommerce-Price-currencySymbol">CHF</span>
-        </span>
-    </p>
+	<p class="total"><strong><?php _e( 'Subtotal', 'woocommerce' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
 
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
 	<p class="buttons">
-		<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="button checkout wc-forward"><?php _e( 'Bestsellen', 'woocommerce' ); ?></a>
+		
+		<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="button checkout wc-forward"><?php _e( 'Checkout', 'woocommerce' ); ?></a>
 	</p>
 
 <?php endif; ?>
 
 <?php do_action( 'woocommerce_after_mini_cart' ); ?>
-

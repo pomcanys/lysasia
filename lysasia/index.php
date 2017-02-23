@@ -23,5 +23,5 @@
           <!-- Sidebar below
           ================================================== -->
           <?php get_template_part('inc/tpl', 'generic-below') ?>
-
+    
 <?php get_footer(); ?>
